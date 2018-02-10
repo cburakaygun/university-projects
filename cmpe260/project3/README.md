@@ -1,4 +1,4 @@
-To start the game, do the following in Playground:
+To start the game, do the following in `Playground`:
 
 `GameArena start.`
 
