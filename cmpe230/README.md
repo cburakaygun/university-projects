@@ -18,4 +18,6 @@ A program which finds duplicate files and/or directories in given directories re
 ### [Project#3](/cmpe230/project3) `C++ & QT`
 A graphical hexadecimal calculator which only supports **addition** and **subtraction**.
 
+I developed this project with [Yaşar Alim Türkmen](https://github.com/alimturkmen).
+
 (Find detailed description in [/project1/cmpe230-assignment3.pdf](/cmpe230/project3/cmpe230-assignment3.pdf))
