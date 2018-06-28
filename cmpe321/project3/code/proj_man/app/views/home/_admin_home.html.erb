@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-xs-6">
+      <%= render partial: 'shared/summary_panel', locals: { obj: Project, allow_delete: true } %>
+  </div>
+
+  <div class="col-xs-6">
+    <%= render partial: 'shared/summary_panel', locals: { obj: Task, allow_delete: true } %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <%= render partial: 'shared/summary_panel', locals: { obj: ProjectManager, allow_delete: true } %>
+  </div>
+
+  <div class="col-xs-6">
+    <%= render partial: 'shared/summary_panel', locals: { obj: Employee, allow_delete: true } %>
+  </div>
+</div>

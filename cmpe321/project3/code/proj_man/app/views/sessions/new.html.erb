@@ -1,0 +1,21 @@
+<% provide(:title, 'Login') %>
+<h1 class="text-center">ProjMan</h1>
+<br/>
+<h2 class="text-center">LOGIN</h2>
+
+<div class="well col-md-4 col-md-offset-4">
+  <%= form_for(:session, url: login_path, html: { class: 'form-horizontal' }) do |f| %>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">USERNAME</label>
+      <div class="col-sm-9 col-sm-offset-1"><%= f.text_field :username, class: 'form-control' %></div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">PASSWORD</label>
+      <div class="col-sm-9 col-sm-offset-1"><%= f.password_field :password, class: 'form-control' %></div>
+    </div>
+
+    <div class="text-center"><%= f.submit 'Log in', class: 'btn btn-primary' %></div>
+  <% end %>
+</div>

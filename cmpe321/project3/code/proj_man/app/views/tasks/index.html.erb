@@ -1,0 +1,5 @@
+<% provide(:title, 'Tasks') %>
+
+<%= render partial: 'shared/index_table', locals: { attrs: Task.attribute_names,
+                                                    objs: @tasks,
+                                                    allow_delete: true } %>

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-fixed-top">
+  <div align="center">
+
+    <div class="btn-group">
+      <%= link_to '<button type="button" class="btn btn-lg btn-default" aria-haspopup="true" aria-expanded="false">HOME PAGE</button>'.html_safe, root_url %>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        PROJECTS <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Create a Project', new_project_url %></li>
+        <li><%= link_to 'All Projects', projects_url %></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <%= link_to '<button type="button" class="btn btn-lg btn-default" aria-haspopup="true" aria-expanded="false">TASKS</button>'.html_safe, tasks_url %>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        PROJECT MANAGERS <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Create a Project Manager', new_project_manager_url %></li>
+        <li><%= link_to 'All Project Managers', project_managers_url %></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        EMPLOYEES <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Create an Employee', new_employee_url %></li>
+        <li><%= link_to 'All Employees', employees_url %></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>

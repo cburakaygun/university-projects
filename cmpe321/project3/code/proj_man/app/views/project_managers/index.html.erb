@@ -1,0 +1,5 @@
+<% provide(:title, 'ProjectManagers') %>
+
+<%= render partial: 'shared/index_table', locals: { attrs: ProjectManager.attribute_names,
+                                                    objs: @project_managers,
+                                                    allow_delete: user_admin? } %>

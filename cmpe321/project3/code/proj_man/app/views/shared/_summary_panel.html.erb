@@ -1,0 +1,20 @@
+<% recs = obj.order(id: :desc).limit(10) %>
+
+<div class="panel panel-primary">
+
+  <div class="panel-heading">
+    <div class="row">
+      <div class="huge">
+        <div class="col-xs-8 text-left"><strong><%= recs.name.pluralize.upcase %></strong></div>
+        <div class="col-xs-4 text-right"><strong><%= number_with_delimiter(obj.count, delimiter:'.') %></strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-footer">
+    <%= render partial: 'shared/index_table', locals: { attrs: obj.attribute_names, objs: recs, allow_delete: allow_delete } %>
+    <div class="clearfix"></div>
+    <p class="text-right">You are seeing last 10 entities. <%= link_to 'See all', recs.model %>
+  </div>
+
+</div>

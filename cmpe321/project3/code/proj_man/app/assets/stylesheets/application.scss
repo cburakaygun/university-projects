@@ -1,0 +1,10 @@
+@import "bootstrap-sprockets";
+@import 'bootstrap';
+
+.table td, .table th {
+  text-align: center;
+}
+
+h3.panel-title {
+  font-weight: bold;
+}

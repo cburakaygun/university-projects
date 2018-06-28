@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProjMan | <%= yield(:title) %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <div class="container-fluid" style="margin-bottom: 20px">
+
+    <%= render 'layouts/header' %>
+
+    <body>
+      <% unless flash.empty? %>
+        <div class="container">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>">
+              <% if message.is_a?(Array) %>
+                <ul>
+                  <% message.each do |m| %>
+                    <li><%= m %></li>
+                  <% end %>
+                </ul>
+              <% else %>
+                <%= message %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <%= yield %>
+        </div>
+      </div>
+    </body>
+
+  </div>
+
+</html>

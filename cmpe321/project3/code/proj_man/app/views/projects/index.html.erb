@@ -1,0 +1,21 @@
+<% provide(:title, 'Projects') %>
+
+<%= form_for('', url: projects_path, method: :get, enforce_utf8: false, html: { class: 'form-horizontal' }) do |f| %>
+  <div class="form-group">
+    <label class="col-sm-1 control-label">STATUS</label>
+    <div class="col-sm-2"><%= f.select :stat, [['ALL', :all], ['Complete', :complete], ['Incomplete', :incomplete]], { selected: params[:stat] }, class: 'form-control' %></div>
+
+    <% if user_admin? %>
+      <label class="col-sm-1 control-label">MANAGER</label>
+      <div class="col-sm-7"><%= f.select :pm_id, ProjectManager.pluck(:id, :first_name, :last_name).map { |id, fn, ln| ["#{id} - #{fn} #{ln}", id] }, { selected: params[:pm_id], include_blank: 'ALL' }, class: 'form-control' %></div>
+    <% end %>
+
+    <div class="col-sm-1 text-center"><%= f.submit 'GET', name: nil, class: 'btn btn-primary' %></div>
+  </div>
+<% end %>
+
+<br/>
+
+<%= render partial: 'shared/index_table', locals: { attrs: Project.attribute_names,
+                                                    objs: @projects,
+                                                    allow_delete: user_admin? } %>

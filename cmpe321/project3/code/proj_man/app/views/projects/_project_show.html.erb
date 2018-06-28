@@ -1,0 +1,40 @@
+<% if user_admin? %>
+  <%= form_for(@project , html: { class: 'form-horizontal' }) do |f| %>
+    <%= render 'shared/error_messages', object: @project %>
+
+    <div class="col-sm-10">
+      <div class="form-group">
+        <div class="col-sm-6 text-center"><strong>PROJECT NAME</strong></div>
+        <div class="col-sm-4 text-center"><strong>START DATE</strong></div>
+        <div class="col-sm-2 text-center"><strong>TASK DAYS</strong></div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-6 text-center"><%= f.text_field :name, class: 'form-control text-center' %></div>
+        <div class="col-sm-4 text-center"><%= f.date_select :start_date, start_year: Date.today.year, class: 'form-control text-center' %></div>
+        <div class="col-sm-2 text-center"><%= f.number_field :task_days, min: 0, class: 'form-control text-center' %></div>
+      </div>
+    </div>
+
+    <div class="col-sm-2">
+      <div class="row text-center" style="margin: 8px 0"><%= f.submit 'SAVE CHANGES', class: 'btn btn-primary' %></div>
+      <div class="row text-center"><%= link_to 'DELETE PROJECT', @project, method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?\n\nAll the tasks related to this project will also be deleted." } %></div>
+    </div>
+
+  <% end %>
+
+<% elsif user_project_manager? %>
+
+  <div class="form-group">
+    <div class="col-sm-6 text-center"><strong>PROJECT NAME</strong></div>
+    <div class="col-sm-4 text-center"><strong>START DATE</strong></div>
+    <div class="col-sm-2 text-center"><strong>TASK DAYS</strong></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-6 text-center"><%= @project.name %></div>
+    <div class="col-sm-4 text-center"><%= @project.start_date %></div>
+    <div class="col-sm-2 text-center"><%= @project.task_days %></div>
+  </div>
+
+<% end %>

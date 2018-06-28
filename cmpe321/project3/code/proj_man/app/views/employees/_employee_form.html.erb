@@ -1,0 +1,11 @@
+<%= form_for(@employee , html: { class: 'form-horizontal' }) do |f| %>
+  <%= render 'shared/error_messages', object: @employee %>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">FIRST NAME</label>
+    <div class="col-sm-3"><%= f.text_field :first_name, class: 'form-control' %></div>
+    <label class="col-sm-2 control-label">LAST NAME</label>
+    <div class="col-sm-3"><%= f.text_field :last_name, class: 'form-control' %></div>
+    <div class="col-sm-2 text-center"><%= f.submit 'CREATE EMPLOYEE', class: 'btn btn-primary' %></div>
+  </div>
+<% end %>

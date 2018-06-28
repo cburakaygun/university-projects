@@ -1,0 +1,93 @@
+<% provide(:title, "TASK (#{@task.id})") %>
+<% provide(:page_title, "TASK (#{@task.id})") %>
+
+<div class="container-fluid well">
+  <%= render 'task_show' %>
+</div>
+
+<div class="col-md-6">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">RELATED PROJECT <a href="<%= url_for(@project) %>"><span class="glyphicon glyphicon-link"></span></a></h3>
+    </div>
+
+    <div class="panel-body">
+      <table class="table table-bordered text-center">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>START DATE</th>
+          <th>ESTIMATED TASK DAYS</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @project.id %></td>
+            <td><%= @project.name %></td>
+            <td><%= @project.start_date %></td>
+            <td><%= @project.task_days %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div class="col-md-6">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">EMPLOYEES (<%= @employees.count %>)</h3>
+    </div>
+
+    <div class="panel-body">
+      <% if user_project_manager? %>
+        <div class="well">
+          <%= form_for(@task_assignment, html: { class: 'form-horizontal' }) do |f| %>
+            <%= render 'shared/error_messages', object: @task_assignment %>
+
+            <%= f.hidden_field :task_id, value: @task.id %>
+            <%= f.hidden_field :src, value: 'task' %>
+
+            <div class="form-group">
+              <div class="col-sm-8"><%= f.select :employee_id, Employee.pluck(:first_name, :last_name, :id).map { |fn, ln, id| ["#{id} - #{fn} #{ln}", id] }, { disabled: @employees.ids }, class: 'form-control' %></div>
+              <div class="col-sm-4 text-center"><%= f.submit 'ASSIGN EMPLOYEE', class: 'btn btn-primary' %></div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>FIRST NAME</th>
+          <th>LAST NAME</th>
+          <th>ACTIONS</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @employees.each do |e| %>
+            <tr>
+              <td><%= e.id %></td>
+              <td><%= e.first_name %></td>
+              <td><%= e.last_name %></td>
+              <td>
+                <% if user_admin? %>
+                  <a href="<%= url_for(e) %>" title="Show Employee"><span class="glyphicon glyphicon-search"></span></a>
+                <% end %>
+                <% if user_project_manager? %>
+                  <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe , { controller: 'task_assignments', action: :destroy, task_id: @task.id, employee_id: e.id, src: 'task' }, title: 'Unassign Employee', method: :delete , data: { confirm: 'Are you sure?' } %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

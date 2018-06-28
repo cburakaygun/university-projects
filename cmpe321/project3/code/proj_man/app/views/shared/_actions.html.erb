@@ -1,0 +1,5 @@
+<% obj_url = "#{url_for(obj.class)}/#{obj['id']}" %>
+<a href="<%= obj_url %>" title="Show"><span class="glyphicon glyphicon-search"></span></a>
+<% if allow_delete %>
+  <%= link_to '<span class="glyphicon glyphicon-trash"></span>'.html_safe, obj_url, title:'Delete', method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

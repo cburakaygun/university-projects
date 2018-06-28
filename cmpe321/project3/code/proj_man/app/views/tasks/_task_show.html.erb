@@ -1,0 +1,46 @@
+<% if user_admin? %>
+
+  <div class="col-sm-10">
+    <div class="form-group">
+      <div class="col-sm-6 text-center"><strong>TASK NAME</strong></div>
+      <div class="col-sm-4 text-center"><strong>START DATE</strong></div>
+      <div class="col-sm-2 text-center"><strong>TOTAL DAYS</strong></div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-6 text-center"><%= @task.name %></div>
+      <div class="col-sm-4 text-center"><%= @task.start_date %></div>
+      <div class="col-sm-2 text-center"><%= @task.total_days %></div>
+    </div>
+  </div>
+  <div class="col-sm-2 text-center">
+    <%= link_to 'DELETE TASK', @task, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
+  </div>
+
+<% elsif user_project_manager? %>
+
+  <%= form_for(@task, html: {class: 'form-horizontal'}) do |f| %>
+    <%= render 'shared/error_messages', object: @task %>
+
+    <div class="col-sm-10">
+      <div class="form-group">
+        <div class="col-sm-6 text-center"><strong>TASK NAME</strong></div>
+        <div class="col-sm-4 text-center"><strong>START DATE</strong></div>
+        <div class="col-sm-2 text-center"><strong>TOTAL DAYS</strong></div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-6 text-center"><%= f.text_field :name, class: 'form-control text-center' %></div>
+        <div class="col-sm-4 text-center"><%= f.date_select :start_date, start_year: Date.today.year, class: 'form-control text-center' %></div>
+        <div class="col-sm-2 text-center"><%= f.number_field :total_days, min: 0, class: 'form-control text-center' %></div>
+      </div>
+    </div>
+
+    <div class="col-sm-2">
+      <div class="row text-center" style="margin: 8px 0"><%= f.submit 'SAVE CHANGES', class: 'btn btn-primary' %></div>
+      <div class="row text-center"><%= link_to 'DELETE TASK', @task, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></div>
+    </div>
+
+  <% end %>
+
+<% end %>

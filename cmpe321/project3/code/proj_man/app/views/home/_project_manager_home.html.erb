@@ -1,0 +1,12 @@
+<% pm_projects = Project.where(id: ProjectAssignment.where(project_manager_id: current_user.id).pluck(:project_id)) %>
+<% pm_tasks = Task.where(project_id: pm_projects.ids) %>
+
+<div class="row">
+  <div class="col-xs-6">
+      <%= render partial: 'shared/summary_panel', locals: { obj: pm_projects, allow_delete: false } %>
+  </div>
+
+  <div class="col-xs-6">
+    <%= render partial: 'shared/summary_panel', locals: { obj: pm_tasks, allow_delete: true } %>
+  </div>
+</div>

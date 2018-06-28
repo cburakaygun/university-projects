@@ -1,0 +1,8 @@
+<% provide(:title, 'Home') %>
+<% provide(:page_title, 'ProjMan') %>
+
+<% if user_admin? %>
+  <%= render partial: 'admin_home' %>
+<% elsif user_project_manager? %>
+  <%= render partial: 'project_manager_home' %>
+<% end %>

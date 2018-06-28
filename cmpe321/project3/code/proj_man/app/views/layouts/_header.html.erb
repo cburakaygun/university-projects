@@ -1,0 +1,21 @@
+<div class="row">
+  <% if user_admin? %>
+    <%= render 'layouts/admin_menu' %>
+  <% elsif user_project_manager? %>
+    <%= render 'layouts/project_manager_menu' %>
+  <% end %>
+</div>
+
+<% if user_logged_in? %>
+  <div class="container-fluid well" style="margin-top: 60px; margin-bottom: 20px; padding-top: 0">
+    <div class="col-sm-3 text-center">
+      <h3>Welcome, <%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
+    </div>
+    <div class="col-sm-6 text-center">
+      <h3><strong><%= (yield :title).upcase %></strong></h3>
+    </div>
+    <div class="col-sm-3 text-center">
+      <h3>Your Role: <%= current_user.type == 'ProjectManager' ? link_to(current_user.type, url_for(current_user)) : current_user.type %> | <%= link_to('Logout', logout_path, method: :delete) %></h3>
+    </div>
+  </div>
+<% end %>

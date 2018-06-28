@@ -1,0 +1,64 @@
+<% provide(:title, "PROJECT MANAGER (#{@project_manager.id})") %>
+
+<div class="container-fluid well">
+  <%= render partial: 'project_manager_form', locals: { btn_text: 'SAVE CHANGES', show_del_btn: true } %>
+</div>
+
+<div class="col-md-12">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">ASSIGNED PROJECTS (<%= @projects.count %>)</h3>
+    </div>
+    <div class="panel-body">
+
+      <% if user_admin? %>
+        <div class="well">
+          <%= form_for(@project_assignment, html: { class: 'form-horizontal' }) do |f| %>
+            <%= render 'shared/error_messages', object: @project_assignment %>
+
+            <%= f.hidden_field :project_manager_id, value: @project_manager.id %>
+            <%= f.hidden_field :src, value: 'project_manager' %>
+
+            <div class="form-group">
+              <div class="col-sm-9"><%= f.select :project_id, Project.pluck(:name, :id).map { |n, id| ["#{id} - #{n}", id] }, { disabled: @projects.ids }, class: 'form-control' %></div>
+              <div class="col-sm-3 text-center"><%= f.submit 'ASSIGN PROJECT', class: 'btn btn-primary' %></div>
+            </div>
+          <% end %>
+
+        </div>
+      <% end %>
+
+      <table class="table table-bordered text-center">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>PROJECT NAME</th>
+          <th>START DATE</th>
+          <th>ESTIMATED TASK DAYS</th>
+          <th>ACTIONS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @projects.each do |p| %>
+          <tr>
+            <td><%= p.id %></td>
+            <td><%= p.name %></td>
+            <td><%= p.start_date %></td>
+            <td><%= p.task_days %></td>
+            <td>
+              <a href="<%= url_for(p) %>" title="Show Project"><span class="glyphicon glyphicon-search"></span></a>
+              <% if user_admin? %>
+                <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, { controller: 'project_assignments', action: :destroy, project_id: p.id, project_manager_id: @project_manager.id, src: 'project_manager' }, title: 'Unassign Project', method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+</div>

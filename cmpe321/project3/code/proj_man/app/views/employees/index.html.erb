@@ -1,0 +1,5 @@
+<% provide(:title, 'Employees') %>
+
+<%= render partial: 'shared/index_table', locals: { attrs: Employee.attribute_names,
+                                                    objs: @employees,
+                                                    allow_delete: user_admin? } %>

@@ -1,0 +1,25 @@
+<% t_attrs = attrs - %w[created_at updated_at password_digest type] %>
+
+<table class="table table-striped table-bordered">
+
+  <thead>
+  <tr>
+    <% t_attrs.each do |a| %>
+      <th><%= a.gsub('_', ' ').upcase %></th>
+    <% end %>
+    <th>ACTIONS</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% objs.each do |obj| %>
+    <tr>
+      <% t_attrs.each do |a| %>
+        <td><%= obj[a] %></td>
+      <% end %>
+      <td><%= render partial: 'shared/actions', locals: { obj: obj, allow_delete: allow_delete } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>

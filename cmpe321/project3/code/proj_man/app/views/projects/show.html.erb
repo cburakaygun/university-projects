@@ -1,0 +1,123 @@
+<% provide(:title, "PROJECT (#{@project.id})") %>
+
+<div class="container-fluid well">
+  <%= render partial: 'project_show' %>
+</div>
+
+<div class="col-md-6">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">MANAGERS (<%= @project_managers.count %>)</h3>
+    </div>
+    <div class="panel-body">
+
+      <% if user_admin? %>
+        <div class="well">
+          <%= form_for(@project_assignment, html: { class: 'form-horizontal' }) do |f| %>
+            <%= render 'shared/error_messages', object: @project_assignment %>
+
+              <%= f.hidden_field :project_id, value: @project.id %>
+              <%= f.hidden_field :src, value: 'project' %>
+
+              <div class="form-group">
+                <div class="col-sm-8"><%= f.select :project_manager_id, ProjectManager.pluck(:first_name, :last_name, :id).map { |fn, ln, id| ["#{id} - #{fn} #{ln}", id] }, { disabled: @project_managers.ids }, class: 'form-control' %></div>
+                <div class="col-sm-4 text-center"><%= f.submit 'ASSIGN MANAGER', class: 'btn btn-primary' %></div>
+              </div>
+          <% end %>
+
+        </div>
+      <% end %>
+
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>FIRST NAME</th>
+          <th>LAST NAME</th>
+          <th>USERNAME</th>
+          <% if user_admin? %>
+            <th>ACTIONS</th>
+          <% end %>
+        </tr>
+        </thead>
+        <tbody>
+        <% @project_managers.each do |pm| %>
+          <tr>
+            <td><%= pm.id %></td>
+            <td><%= pm.first_name %></td>
+            <td><%= pm.last_name %></td>
+            <td><%= pm.username %></td>
+            <% if user_admin? %>
+              <td>
+                <a href="<%= url_for(pm) %>" title="Show Project Manager"><span class="glyphicon glyphicon-search"></span></a>
+                <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe , { controller: 'project_assignments', action: :destroy, project_id: @project.id, project_manager_id: pm.id, src: 'project' } , title: 'Unassign Project Manager', method: :delete , data: { confirm: 'Are you sure?' } %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">TASKS (<%= @tasks.count %>)</h3>
+    </div>
+    <div class="panel-body">
+
+      <% if user_project_manager? %>
+
+        <div class="well">
+
+          <%= form_for(@project , html: { class: 'form-horizontal' }) do |f| %>
+            <%= render 'shared/error_messages', object: @project %>
+
+            <%= fields_for(@tasks.build, html: { class: 'form-horizontal' }) do |ff| %>
+              <div class="form-group">
+                <label class="col-sm-1 control-label">NAME</label>
+                <div class="col-sm-11"><%= ff.text_field :name, class: 'form-control' %></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-1 control-label">START</label>
+                <div class="col-sm-5"><%= ff.date_select :start_date, start_year: Date.today.year, class: 'form-control' %></div>
+                <label class="col-sm-1 control-label">DAYS</label>
+                <div class="col-sm-2"><%= ff.number_field :total_days, class: 'form-control' %></div>
+                <div class="col-sm-3 text-right"><%= f.submit 'CREATE TASK', class: 'btn btn-primary' %></div>
+              </div>
+            <% end %>
+          <% end %>
+
+        </div>
+
+      <% end %>
+
+      <table class="table table-bordered text-center">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>START DATE</th>
+          <th>TOTAL DAYS</th>
+          <th>ACTIONS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @tasks.each do |t| %>
+          <tr>
+            <td><%= t.id %></td>
+            <td><%= t.name %></td>
+            <td><%= t.start_date %></td>
+            <td><%= t.total_days %></td>
+            <td><%= render partial: 'shared/actions', locals: { obj: t, allow_delete: true } %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
