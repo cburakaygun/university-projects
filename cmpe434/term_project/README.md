@@ -38,7 +38,7 @@ Our mapping algorithm maintains an array of Cells (of size 49) and each Cell has
 #### Grasping/Releasing the Ball
 Our robot has a **EV3 Medium Servo Motor** for grasping/releasing ball ability. We constructed a lifting mechanism in front of our robot and connected it to the **EV3 Medium Servo Motor** via 2 gears. When the **EV3 Medium Servo Motor** runs forward, the lever is lifted up and when the **EV3 Medium Servo Motor** runs backward, the lever is lifted down.
 
-#### Software
+### Software
 We used **Subsumption** architecture on **LeJOS** to implement the **Button Interface**. There are **5** behaviours with the following run conditions (Listed from the highest priority to the lowest priority):
 
 *  **IDLE**: Takes control when **ENTER** button is pressed.
@@ -68,4 +68,3 @@ Classes that run only on the PC:
 
 *  PCMain: Main class that runs on the PC. This class is reponsible for maintaining a socket connection with the Robot and updating the map on the PC screen according to the current operation of the Robot.
 *  PCMonitor: A **JFrame** object which handles the graphics of the map on the PC screen.
-
