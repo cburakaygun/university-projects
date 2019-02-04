@@ -47,7 +47,7 @@ Our robot has a **EV3 Medium Servo Motor** for grasping/releasing ball ability. 
 We used **Subsumption** architecture on **LeJOS** to implement the **Button Interface**. There are **5** behaviours with the following run conditions (Listed from the highest priority to the lowest priority):
 
 *  **IDLE**: Takes control when **ENTER** button is pressed.
-*  **RESET*: Takes control when **ESCAPE** button is pressed.
+*  **RESET**: Takes control when **ESCAPE** button is pressed.
 *  **MAPPING**: Takes control when **UP** button is pressed or the mapping process should be reset.
 *  **LOCALIZATION**: Takes control when **DOWN** button is pressed or the localization process should be reset.
 *  **BASKETING**: Takes control when **LOCALIZATION** is done.
