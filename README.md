@@ -2,6 +2,8 @@
 
 Stuff I implemented as homeworks/projects during my education at [Boğaziçi University](http://boun.edu.tr).
 
+***
+
 ### [CMPE150 - Introduction to Computing | FALL 2015](/cmpe150) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe150/2015/fall.0))
 
 * #### [Project#1](/cmpe150/project1) `Java`
@@ -14,6 +16,7 @@ Stuff I implemented as homeworks/projects during my education at [Boğaziçi Uni
 * #### [Project#3](/cmpe150/project3) `Java`
   There is a board with 256 cells (16*16). Each cell has a color. The purpose is to traverse all the cells and change their colors according to some rules until no change is possible anymore.
 
+***
 
 ### [CMPE160 - Introduction to Object Oriented Programming | SPRING 2016](/cmpe160) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe160/2016/spring))
 
@@ -27,6 +30,7 @@ Stuff I implemented as homeworks/projects during my education at [Boğaziçi Uni
 * #### [Project#3](/cmpe160/project3) `Java`
   Implementation of an `AVL Tree`
 
+***
 
 ### [CMPE230 - Systems Programming | SPRING 2017](/cmpe230) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe230/2017/spring))
 
@@ -41,6 +45,7 @@ Stuff I implemented as homeworks/projects during my education at [Boğaziçi Uni
 
   I developed this project with [Yaşar Alim Türkmen](https://github.com/alimturkmen).
 
+***
 
 ### [CMPE240 - Digital Systems | SPRING 2017](/cmpe240) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe240/2017/spring))
 
@@ -63,6 +68,8 @@ My laboratory partner was [Yaşar Alim Türkmen](https://github.com/alimturkmen)
 * #### [Experiment#5](/cmpe240/exp5) `Verilog`
   Arithmetic Logic Unit
 
+***
+
 ### [CMPE250 - Data Structures and Algorithms | FALL 2016](/cmpe250) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe250/2016/fall-0))
 
 * #### [Project#1](/cmpe250/project1) `C++`
@@ -80,6 +87,8 @@ My laboratory partner was [Yaşar Alim Türkmen](https://github.com/alimturkmen)
 * #### [Project#5](/cmpe250/project5) `C++`
   Implementation of `A* Search Algorithm`
 
+***
+
 ### [CMPE260 - Principles of Programming Languages | SPRING 2017](/cmpe260) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe260/2017/spring))
 
 * #### [Project#1](/cmpe260/project1) `Prolog`
@@ -90,6 +99,8 @@ My laboratory partner was [Yaşar Alim Türkmen](https://github.com/alimturkmen)
 
 * #### [Project#3](/cmpe260/project3) `Smalltalk`
   A Simple Version of the Worldwide Game DotA (Defence of the Ancients)
+
+***
 
 ### [CMPE322 - Operating Systems | FALL 2017](/cmpe322) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe322/2017/fall))
 
@@ -105,8 +116,12 @@ My laboratory partner was [Yaşar Alim Türkmen](https://github.com/alimturkmen)
   Implementation of I/O Based Operations
 
   This project was developed on top of Project#2.
-  
+
+***
+
  ### [CMPE352 - Fundamentals of Software Engineering | SPRING 2018 & CMPE451 - Project Development in Software Engineering | FALL 2018](https://github.com/bounswe/bounswe2018group7)
+
+***
 
 ### [CMPE434 - Introduction to Robotics | FALL 2018](/cmpe434) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe434/2018/fall))
 
