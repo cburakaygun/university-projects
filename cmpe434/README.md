@@ -7,5 +7,5 @@ My course partner was [İsmet Dağlı](https://github.com/ismet-dagli).
 Design of a "basketball player" robot (Lego Mindstorms EV3) that is capable of map making, localization, path planning and object grasping, and its implementation with `LeJOS`.
 
 
-(Find detailed description in [/term_project/cmpe434-termproject.pdf](/cmpe434/term_project/cmpe434-termproject.pdf)
+(Find detailed description in [/term_project/cmpe434-termproject.pdf](/cmpe434/term_project/cmpe434-termproject.pdf))
 
