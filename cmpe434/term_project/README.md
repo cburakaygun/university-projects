@@ -1,5 +1,7 @@
 This is our hardware and software solution to the term project.
 
+***
+
 ### Design of the Robot
 The map (4×4 square grid) requires the robot to make plenty of 90 degrees point rotations throughout the tasks. We can rotate the robot by a certain amount with 2 different approaches: One of them is utilizing odometry and the other one is utilizing a **Gyro** sensor. On the preliminary, we thought that using a **Gyro** sensor was more reliable in terms of precision. However, as we observed the movements of the robot, we found out that the **Gyro** sensor is not so reliable. Hence, we decided to the calibrate and use odometry for 90 degree rotations. We still use the **Gyro** sensor, though. We rotate the robot using odometry and measure the value of the **Gyro** sensor. Then, we make additional rotations (again with odometry) if the **Gyro** value is far from the desired amount. As a result, 1 of our 4 sensors is still a **EV3 Gyro Sensor**.
 
@@ -18,6 +20,7 @@ Overall, we construct a 2-wheeled (with 1 steel ball) robot with 4 sensors (1 **
 *  **NXT Light Sensor** is mounted on the front side of the robot facing towards the forward direction of the robot.
 *  **EV3 Medium Servo Motor** is mounted so that it utilizes the lifting mechanism which is mounted on the front side of the robot.
 
+***
 
 ### Tasks
 #### Map Making
@@ -37,6 +40,8 @@ Our mapping algorithm maintains an array of Cells (of size 49) and each Cell has
 
 #### Grasping/Releasing the Ball
 Our robot has a **EV3 Medium Servo Motor** for grasping/releasing ball ability. We constructed a lifting mechanism in front of our robot and connected it to the **EV3 Medium Servo Motor** via 2 gears. When the **EV3 Medium Servo Motor** runs forward, the lever is lifted up and when the **EV3 Medium Servo Motor** runs backward, the lever is lifted down.
+
+***
 
 ### Software
 We used **Subsumption** architecture on **LeJOS** to implement the **Button Interface**. There are **5** behaviours with the following run conditions (Listed from the highest priority to the lowest priority):
