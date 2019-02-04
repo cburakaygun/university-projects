@@ -127,5 +127,5 @@ My laboratory partner was [Yaşar Alim Türkmen](https://github.com/alimturkmen)
 
 * #### [Term Project](/cmpe434/term_project) `Java`
   Design of a "basketball player" robot (Lego Mindstorms EV3) that is capable of map making, localization, path planning and object grasping, and its implementation with `LeJOS`.
+  
   My course partner was [İsmet Dağlı](https://github.com/ismet-dagli).
-
