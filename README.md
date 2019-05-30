@@ -121,6 +121,7 @@ My laboratory partner was [Yaşar Alim Türkmen](https://github.com/alimturkmen)
 
  ### [CMPE352 - Fundamentals of Software Engineering | SPRING 2018 & CMPE451 - Project Development in Software Engineering | FALL 2018](https://github.com/bounswe/bounswe2018group7)
 
+
 ***
 
 ### [CMPE434 - Introduction to Robotics | FALL 2018](/cmpe434) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe434/2018/fall))
@@ -129,3 +130,17 @@ My laboratory partner was [Yaşar Alim Türkmen](https://github.com/alimturkmen)
   Design of a "basketball player" robot (Lego Mindstorms EV3) that is capable of map making, localization, path planning and object grasping, and its implementation with `LeJOS`.
   
   My course partner was [İsmet Dağlı](https://github.com/ismet-dagli).
+
+
+***
+
+### [CMPE462 - Machine Learning | SPRING 2019](/cmpe462) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe462/2019/spring))
+
+* #### [Project#1](/cmpe462/project1) `Python3`
+  Study of Bias/Variance Dilemma, Cross Validation, and Parametric Classification on `Iris Data Set`
+
+* #### [Project#2](/cmpe462/project2) `Python3`
+  Study of Dimensionality Reduction (`PCA` and `LDA`) and Classification (`Mixture of Gaussians` and `K-Nearest Neighbors`)
+
+* #### [Project#3](/cmpe462/project3) `Python3`
+  Study of `Multilayer Perceptron`
