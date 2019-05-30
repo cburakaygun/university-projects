@@ -144,3 +144,15 @@ My laboratory partner was [Yaşar Alim Türkmen](https://github.com/alimturkmen)
 
 * #### [Project#3](/cmpe462/project3) `Python3`
   Study of `Multilayer Perceptron`
+
+***
+
+### [CMPE478 - Parallel Processing | SPRING 2019](/cmpe478) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe478/2019/spring))
+
+* #### [Project#1](/cmpe478/project1) `C++`
+  Implementation of a parallel version of Google ranking process using `OpenMP`, and applying it on the [`Erdös Web Graph`](https://web-graph.org/).
+
+* #### [Project#2](/cmpe478/project2) `C++`
+  **Part A**: Implementation of a parallel version of Google ranking process using `MPI`, and applying it on the [`Erdös Web Graph`](https://web-graph.org/) partitioned via [`METIS`](http://glaros.dtc.umn.edu/gkhome/metis/metis/overview).
+
+  **Part B**: Implementation of a parallel version of Google ranking process using `Thrust` for NVIDIA GPUs, and applying it on the [`Erdös Web Graph`](https://web-graph.org/).
