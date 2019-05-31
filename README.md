@@ -156,3 +156,21 @@ My laboratory partner was [Yaşar Alim Türkmen](https://github.com/alimturkmen)
   **Part A**: Implementation of a parallel version of Google ranking process using `MPI`, and applying it on the [`Erdös Web Graph`](https://web-graph.org/) partitioned via [`METIS`](http://glaros.dtc.umn.edu/gkhome/metis/metis/overview).
 
   **Part B**: Implementation of a parallel version of Google ranking process using `Thrust` for NVIDIA GPUs, and applying it on the [`Erdös Web Graph`](https://web-graph.org/).
+
+***
+
+### [CMPE493 - Introduction to Information Retrieval | SPRING 2019](/cmpe493) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe493/2019/spring))
+
+* #### [Project#1](/cmpe493/project1) `Python3`
+  Implementation of a simple document retrieval system that is capable of boolean and wildcard queries.
+
+* #### [Project#2](/cmpe493/project2) `Python3`
+  Implementation of a simple content based movie recommendation system.
+
+* #### [Project#3](/cmpe493/project3) `Python3`
+  Implementation of an unsupervised extractive single document summarization program based on `K-Means Clustering`.
+
+* #### [Term Project](/cmpe493/term_project) `Python3`
+  Implementation of a question answering (QA) system that can answer geography-related questions asked in Turkish free-text.
+
+  My term project partners: [Atıf Emre Yüksel](https://github.com/atifemreyuksel) and [Baran Kılıç](https://github.com/kilicbaran)
