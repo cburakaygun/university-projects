@@ -121,7 +121,6 @@ My laboratory partner was [Yaşar Alim Türkmen](https://github.com/alimturkmen)
 
  ### [CMPE352 - Fundamentals of Software Engineering | SPRING 2018 & CMPE451 - Project Development in Software Engineering | FALL 2018](https://github.com/bounswe/bounswe2018group7)
 
-
 ***
 
 ### [CMPE434 - Introduction to Robotics | FALL 2018](/cmpe434) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe434/2018/fall))
@@ -131,6 +130,14 @@ My laboratory partner was [Yaşar Alim Türkmen](https://github.com/alimturkmen)
   
   My course partner was [İsmet Dağlı](https://github.com/ismet-dagli).
 
+***
+
+### [CMPE443 - Principles of Embedding Systems Design | FALL 2018](/cmpe443) ([Course Page](https://www.cmpe.boun.edu.tr/courses/cmpe443/2018/fall))
+
+* #### [Term Project](/cmpe443/term_project) `C`
+  Design and implementation of an autonomous car with `LPC4088 Board` (and several sensors) on `4-Wheel Robot Smart Car Chassis`. Development was done on `Keil uVision (MDK-ARM)` software.
+  
+  My project partners: [Atıf Emre Yüksel](https://github.com/atifemreyuksel), [Ömer Kırbıyık](https://github.com/kirbiyik) and [Yaşar Alim Türkmen](https://github.com/alimturkmen)
 
 ***
 
